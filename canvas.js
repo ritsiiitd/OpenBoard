@@ -7,7 +7,9 @@ let tool = canvas.getContext("2d");
 tool.strokeStyle = "black";
 tool.lineWidth = 3;
 
-//DRAWWW
+let undoRedoHistory = [];
+let state = -1;
+//DRAWWW and UNDO REDO
 let mouseDown =false;
 let pencilSelected =false;
 //mousedown -> start drawing Path //mouse move-> path fill
@@ -27,6 +29,10 @@ canvas.addEventListener("mousemove",(e)=>{
 
 canvas.addEventListener("mouseup",(e)=>{
     mouseDown = false;
+    //add this state to undoRedoHistory as it is completed
+    let url = canvas.toDataURL();
+    undoRedoHistory.push(url);
+    state = undoRedoHistory.length-1;
 })
 
 
@@ -77,9 +83,37 @@ pimg.addEventListener("click",(e)=>{
 let download = document.querySelector("#download");
 
 download.addEventListener("click",(e)=>{
-    let url = canvas.toDataURL();
+    let url = canvas.toDataURL();//state of the canvas in form of pixels data
     let a = document.createElement("a");//creating an element which will contain canvas as pixels
     a.href = url;
     a.download = "OpenBoard.jpg";
     a.click();
+})
+
+
+//Undo Redo
+
+let undo = document.querySelector("#undo");
+let redo = document.querySelector("#redo");
+
+undo.addEventListener("click",(e)=>{
+    if(state>0){
+        state--;
+    }
+    let img = new Image();//image reference object
+    img.src = undoRedoHistory[state];
+    img.onload=(e)=>{
+        tool.drawImage(img,0,0,canvas.width,canvas.height);
+    }
+})
+
+redo.addEventListener("click",(e)=>{
+    if(state<undoRedoHistory.length-1){
+        state++;
+    }
+    let img = new Image();//image reference object
+    img.src = undoRedoHistory[state];
+    img.onload=(e)=>{
+        tool.drawImage(img,0,0,canvas.width,canvas.height);
+    }
 })
