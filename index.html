@@ -15,9 +15,9 @@
         <i class="fa-solid fa-ellipsis-vertical"></i>
     </div>
     <div class="tools animate-tools">
-        <img id="p" src="icons/pencil.png">
+        <img id="p" src="icons/brush.png">
         <img id="e" src="icons/eraser.png">
-        <img src="icons/download.png">
+        <img id="download" src="icons/download.png">
         <img id="upload" src="icons/upload.png">
         <img src="icons/undo.png">
         <img src="icons/redo.png">
@@ -26,19 +26,19 @@
 
     <div class="pencil">
         <div class="pencil-width">
-            <input type="range" min="2" max="10" value="3">
+            <input type="range" min="2" max="20" value="3" class="pencil-w">
         </div>
         <div class="colors">
-            <div class="black pencil-color"></div>
-            <div class="blue pencil-color"></div>
-            <div class="red pencil-color"></div>
-            <div class="green pencil-color"></div>
-            
+            <div class="black pencil-color" id="#393D3F"></div>
+            <div class="blue pencil-color" id="#62929E"></div>
+            <div class="red pencil-color" id="#93032E"></div>
+            <div class="green pencil-color" id = "#9CB380"></div>
+            <div class="pink pencil-color" id = "#E8998D"></div>
         </div>
     </div>
 
     <div class="eraser">
-        <input type="range" min="2" max="10" value="3">
+        <input type="range" min="2" max="200" value="3" class="eraser-w">
     </div>
 
     <!--sticky gets added on clicking so initially removing it-->
@@ -52,10 +52,12 @@
         </div>
     </div> -->
 
+    <canvas></canvas>
 
 
 
     <!-- linking JS  -->
     <script src="functionalities.js"></script>
+    <script src="canvas.js"></script>
 </body>
 </html>

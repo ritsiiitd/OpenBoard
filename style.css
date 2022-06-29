@@ -78,25 +78,27 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .black{
-    background-color: black;
+    background-color: #393D3F;
 }
 
 .blue{
-    background-color: blue;
+    background-color: #62929E;
 }
 
 .red{
-    background-color: red;
+    background-color: #93032E;
 }
 
 .green{
-    background-color: green;
+    background-color: #9CB380;
 }
-
+.pink{
+    background-color: #E8998D;
+}
 .eraser{
     height: 2rem;
     width: 7rem;
@@ -145,13 +147,19 @@ body{
     width: 100%;
     outline: none;
     border :none;
-    resize: none;
+    resize: both;
+    font-size: xx-large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .minimize{
-    background-color: greenyellow;
+    background-color: green;
     
 }
 .close{
     background-color: crimson;
+}
+
+img{
+    cursor: pointer;
 }
