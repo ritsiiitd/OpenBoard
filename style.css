@@ -1,0 +1,157 @@
+*{
+    box-sizing: "border-box";
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.options{
+    height: 4rem;
+    width: 4rem;
+    background-color: peachpuff;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.tools{
+    display:flex;
+    height: 5rem;
+    width: 50rem;
+    justify-content: space-around;
+    position: absolute;
+    top: 2rem;
+    left: 35rem;
+    background-color: pink;
+}
+.tools > *{
+    display: block;
+}
+.animate-tools{
+    animation-name: scale-tools;
+    animation-duration: 1s;
+}
+@keyframes scale-tools{
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.pencil{
+    height:5rem;
+    width: 7rem;
+    
+    position: absolute;
+    top: 7rem;
+    left: 35rem
+}
+
+.pencil-width{
+    
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pencil-width input{
+    width: 80%;
+}
+
+.pencil-color{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.colors{
+    height: calc(100%-2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.black{
+    background-color: black;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+.eraser{
+    height: 2rem;
+    width: 7rem;
+    position: absolute;
+    top: 7rem;
+    left:43rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.eraser input{
+    width: 80%;
+}
+
+.sticky-note{
+
+    height: 15rem;
+    width: 15rem;
+    position: absolute;
+    top: 20rem;
+    left: 20rem;
+}
+
+.header{
+    background-color: lightgrey;
+    height: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header > *{
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.writing-area{
+    height: calc(100% - 2rem);
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+}
+
+.writing-area > textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border :none;
+    resize: none;
+}
+
+.minimize{
+    background-color: greenyellow;
+    
+}
+.close{
+    background-color: crimson;
+}
